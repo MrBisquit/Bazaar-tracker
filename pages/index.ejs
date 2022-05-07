@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1 align="center">
+        Bazaar tracker
+    </h1>
+
+    <a><% user.player.displayname %></a><button onclick="location = '/sp/';">Switch profiles</button>
+    <a>Your coin purse(current profile): <% purse %></a>
+
+    <h4 align="center">Last got: <%- lastgot %></h4>
+
+    <input style="align-self: center;" placeholder="Search for an item..." type="search" onclick="location = '/search/?q='" />
+
+    <div class="item_list_container" align="center">
+        <% for(let i =0;i < list.length; i++){ %>
+            <div class="item_container" onclick="location = '/item/<%= list[i].product_id %>/';">
+                <h3><%= list[i].product_id %></h3>
+                Buy price: <%= list[i].quick_status.buyPrice %>
+                Sell Price: <%= list[i].quick_status.sellPrice %>
+            </div>
+            <!--<br>-->
+        <% } %>
+    </div>
+</body>
+</html>

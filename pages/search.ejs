@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onload="focusi();">
+    <h1 align="center">
+        Bazaar tracker
+    </h1>
+
+    <h4 align="center">Last got: <%- lastgot %></h4>
+
+    <input style="align-self: center;" placeholder="Search for an item..." type="search" id="search" onkeyup="Search();" value="<%- query %>" />
+    <button onclick="location = '/';">Go back</button>
+    <script>
+        function Search() {
+            location = "/search/?q=" + document.getElementById("search").value.toUpperCase();
+        }
+        function focusi() {
+            var input = document.getElementById("search");
+            const end = input.value.length;
+
+            input.setSelectionRange(end, end);
+            input.focus();
+        }
+    </script>
+
+    <div class="item_list_container" align="center">
+        <% for(let i =0;i < list.length; i++){ %>
+            <% if(list[i].product_id.includes(query)) { %>
+            <div class="item_container" onclick="location = '/item/<%= list[i].product_id %>/';">
+                <h3><%= list[i].product_id %></h3>
+                Buy price: <%= list[i].quick_status.buyPrice %>
+                Sell Price: <%= list[i].quick_status.sellPrice %>
+            </div>
+            <% } %>
+            <!--<br>-->
+        <% } %>
+    </div>
+</body>
+</html>

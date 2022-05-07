@@ -1,0 +1,23 @@
+{
+  "name": "hypixel-bztracker",
+  "version": "1.0.0",
+  "description": "A simple web server that requests Hypixels API to get information about the bazaar.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "crypto": "^1.0.1",
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.2",
+    "form-data": "^4.0.0",
+    "moment": "^2.29.3",
+    "node-fetch": "^3.2.4",
+    "request": "^2.88.2"
+  }
+}

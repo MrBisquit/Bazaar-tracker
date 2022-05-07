@@ -1,0 +1,22 @@
+<h1 align="center">Bazaar tracker</h1>
+<button onclick="location = '/';">Go back</button>
+<h3><% item.product_id %></h3>
+Buy price: <%= item.quick_status.buyPrice %><br>
+Sell Price: <%= item.quick_status.sellPrice %>
+
+<h3>Sell summary</h3>
+<% for(let i =0;i < item.sell_summary.length; i++){ %>
+    <div>
+        Amount: <%= item.sell_summary[i].amount %>
+        Price per unit: <%= item.sell_summary[i].pricePerUnit %>
+        Orders: <%= item.sell_summary[i].orders %>
+    </div>
+<% } %>
+<h3>Buy summary</h3>
+<% for(let i =0;i < item.buy_summary.length; i++){ %>
+    <div>
+        Amount: <%= item.buy_summary[i].amount %>
+        Price per unit: <%= item.buy_summary[i].pricePerUnit %>
+        Orders: <%= item.buy_summary[i].orders %>
+    </div>
+<% } %>

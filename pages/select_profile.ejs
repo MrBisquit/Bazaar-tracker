@@ -1,0 +1,10 @@
+<h1 align="center">Bazaar tracker</h1>
+<h3 align="center">Select a profile to continue</h3>
+<div align="center">
+<% for(let i =0;i < profiles.length; i++){ %>
+    <div class="item_container" onclick="location = '/?selected_profile_UUID=<%= profiles[i].profile_id %>';">
+        <h1 align="center"><%= profiles[i].cute_name %></h1>
+    </div>
+    <!--<br>-->
+<% } %>
+</div>
